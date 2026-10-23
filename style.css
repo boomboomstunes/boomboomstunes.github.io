@@ -29,7 +29,7 @@ nav a.on,nav a:hover{border-color:#fff}
 .btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:600;padding:12px 24px;border-radius:999px;font-size:17px;box-shadow:0 4px 0 var(--orange-d);transition:transform .1s}
 .btn:hover{transform:translateY(-2px)}.btn.alt{background:#fff;color:var(--orange-d);box-shadow:0 4px 0 #0002}
 .card .btn{align-self:flex-start;margin-top:auto}
-.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}.btns .btn{margin-top:0;padding:10px 18px;font-size:16px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}.btns .btn{margin-top:0;padding:8px 14px;font-size:15px}
 .btn.alt2{background:#fff;color:var(--orange-d);border:2px solid var(--orange);box-shadow:0 4px 0 #ffd2bd}
 .book img{aspect-ratio:1/1;object-fit:cover;background:var(--sky-l)}
 .pl{padding:26px 20px;color:#fff;border-radius:22px;text-decoration:none;display:flex;flex-direction:column;gap:14px;min-height:150px;justify-content:space-between;box-shadow:0 6px 20px #1f2a4420}
