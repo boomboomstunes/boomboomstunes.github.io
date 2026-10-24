@@ -38,6 +38,20 @@ ACTIVITY_BOOKS = [
      "Learn numbers 1 to 20 with BoomBoom and Fuzz while coloring sweet Valentine pages. Ages 2-5."),
 ]
 
+PACKS = [
+    ("Zombies in the Neighbourhood Song & Movement Pack", "/img/pack-zombies.jpg", "https://www.etsy.com/listing/4602409949",
+     "Our spooky-silly zombie song plus 8 movement cards, a lyrics poster, a move-along sheet, 4 movement games and 3 coloring pages. Instant download for ages 2-6.", "CA$7.99"),
+]
+
+def pack_cards():
+    return "".join(
+        f'<div class="card"><img src="{i}" alt="{html.escape(t)}" loading="lazy" style="aspect-ratio:4/3;object-fit:cover"><div class="body"><span class="date">New · Instant download · {p}</span><h3>{html.escape(t)}</h3><p>{html.escape(d)}</p>'
+        f'<a class="btn" href="{u}" target="_blank" rel="noopener">Get it on Etsy</a></div></div>'
+        for t, i, u, d, p in PACKS)
+
+def pack_promo(heading="New! Song &amp; Movement Activity Packs", sub="Turn BoomBoom songs into brain breaks, circle time and party fun."):
+    return f'''<section class="section" style="background:#3b2a6b;color:#fff"><div class="wrap"><h2 class="center" style="font-size:36px;margin-top:0;color:#b6f05a">{heading}</h2><p class="center" style="margin:-6px auto 26px;max-width:640px;font-size:19px">{sub}</p><div class="grid" style="max-width:760px;margin:auto;color:var(--ink)">{pack_cards()}</div></div></section>'''
+
 def book_cards(items, kind):
     return "".join(
         f'<div class="card book"><img src="{i}" alt="{html.escape(t)} {kind} cover" loading="lazy"><div class="body"><h3>{html.escape(t)}</h3><p>{html.escape(d)}</p>'
@@ -184,7 +198,7 @@ def build():
 <a class="tile" href="https://open.spotify.com/artist/3LVAZaWsdE5i31Ikjvlwl0" target="_blank" rel="noopener"><span>Listen</span><img src="/img/listen.jpg" alt="Listen to BoomBooms Tunes songs" loading="lazy"></a></div></div></section>
 <section class="section"><div class="wrap"><h2 class="center" style="font-size:36px;margin-top:0">BoomBoom &amp; Fuzz Picture Books</h2><div class="grid">{books}</div>
 <h2 class="center" style="font-size:32px;margin-top:48px">Coloring &amp; Activity Books</h2><div class="grid">{activity}</div></div></section>
-<section class="section" style="background:var(--sky-l)"><div class="wrap center"><h2 style="font-size:36px;margin-top:0">Free Printable Coloring Pages</h2><p>Free BoomBoom and Fuzz coloring sheets for little hands.</p><a class="btn" href="/free-toddler-coloring-pages">Get Free Goodies</a></div></section>"""
+<section class="section" style="background:var(--sky-l)"><div class="wrap center"><h2 style="font-size:36px;margin-top:0">Free Printable Coloring Pages</h2><p>Free BoomBoom and Fuzz coloring sheets for little hands.</p><a class="btn" href="/free-toddler-coloring-pages">Get Free Goodies</a></div></section>""" + pack_promo()
     write("/", page("BoomBooms Tunes | Adventures with BoomBoom and Fuzz", "Kids songs, videos, picture books and free printables starring BoomBoom and Fuzz. Fun for toddlers and preschoolers.", "/", home))
 
     # Books
@@ -203,7 +217,7 @@ def build():
     write("/store", page("Shop BoomBoom & Fuzz Kids Clothes and Gifts | BoomBooms Tunes", "Shop BoomBoom and Fuzz printables, flash cards, coloring books, toddler tees and gifts on our Etsy shop.", "/store",
         f"""<div class="page-title"><h1>Shop BoomBoom &amp; Fuzz</h1><p>Printables, flash cards, toddler tees and gifts</p></div>
 <section class="section"><div class="wrap center"><img src="/img/shop.jpg" alt="BoomBoom and Fuzz products" style="max-width:520px;width:100%;margin:0 auto 24px;border-radius:26px" loading="lazy">
-<p style="font-size:19px;max-width:620px;margin:0 auto 22px">Our shop now lives on Etsy! Find printable coloring books, action and yoga flash cards for toddlers, and BoomBoom and Fuzz clothing and gifts.</p>
+</div></section>""" + pack_promo("Song &amp; Activity Packs", "Printable music and movement packs made from our songs.") + f"""<section class="section"><div class="wrap center"><p style="font-size:19px;max-width:620px;margin:0 auto 22px">Our shop now lives on Etsy! Find printable coloring books, action and yoga flash cards for toddlers, and BoomBoom and Fuzz clothing and gifts.</p>
 <a class="btn" href="{ETSY}" target="_blank" rel="noopener">Visit our Etsy shop</a>
 <h2 style="font-size:30px;margin-top:48px">Picture books</h2><p>Our BoomBoom and Fuzz books are on Amazon.</p><a class="btn alt" style="box-shadow:0 4px 0 #ffd2bd" href="/books">See the books</a></div></section>"""))
 
@@ -213,7 +227,7 @@ def build():
     write("/free-toddler-coloring-pages", page("Free Toddler Coloring Pages | Printable Halloween Coloring Sheets | BoomBooms Tunes", "Free printable Halloween coloring pages for toddlers and preschoolers with BoomBoom and Fuzz. Download the free PDF.", "/free-toddler-coloring-pages",
         f"""<div class="page-title"><h1>Free BoomBoom &amp; Fuzz Goodies!</h1><p>Free printable coloring pages for little hands</p></div>
 <section class="section"><div class="wrap"><h2 class="center" style="margin-top:0;font-size:32px">Free Halloween Coloring Pages</h2><div class="grid">{cards}</div>
-<p class="center" style="margin-top:30px"><a class="btn" href="/downloads/BoomBoom-Halloween-Coloring-Pages.pdf" download>Download &amp; print (free PDF)</a></p></div></section>""", "img/color-pumpkin.jpg"))
+<p class="center" style="margin-top:30px"><a class="btn" href="/downloads/BoomBoom-Halloween-Coloring-Pages.pdf" download>Download &amp; print (free PDF)</a></p></div></section>""" + pack_promo("Want More Halloween Fun?", "Get the full zombie song pack: the song, movement cards, a lyrics poster and 3 more coloring pages."), "img/color-pumpkin.jpg"))
 
     # About
     write("/about-us", page("About BoomBoom & Fuzz: Kids Songs, Videos & Books | BoomBooms Tunes", "Meet BoomBoom and his silly sidekick Fuzz. Original kids songs, 3D cartoons and picture books for toddlers and preschoolers.", "/about-us",
