@@ -40,7 +40,7 @@ ACTIVITY_BOOKS = [
 
 PACKS = [
     ("Zombies in the Neighbourhood Song & Movement Pack", "/img/pack-zombies.jpg", "https://www.etsy.com/listing/4602409949",
-     "Our spooky-silly zombie song plus 8 movement cards, a lyrics poster, a move-along sheet, 4 movement games and 3 coloring pages. Instant download for ages 2-6.", "CA$7.99"),
+     "Our spooky-silly zombie song plus 8 movement cards, a lyrics poster, a move-along sheet, 4 movement games and 3 coloring pages. Instant download for ages 2-6.", "CA$3.99"),
 ]
 
 def pack_cards():
