@@ -131,10 +131,11 @@ def page(title, desc, path, body, og_img="img/hero.png"):
 <meta property="og:image" content="{SITE}/{og_img}"><meta property="og:type" content="website"><link rel="icon" href="/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=2"></head><body>
+<link rel="stylesheet" href="/style.css?v=2"><!-- MailerLite Universal --><script>(function(w,d,e,u,f,l,n){{w[f]=w[f]||function(){{(w[f].q=w[f].q||[]).push(arguments);}},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);}})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account', '2775693');</script><!-- End MailerLite Universal --></head><body>
 <header><div class="bar"><a class="brand" href="/">BoomBooms Tunes</a><button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">Menu</button><nav>{nav}</nav></div></header>
 <main>{body}</main>
 <section class="join"><h2>Join the BoomBoom Family!</h2><p>New songs, videos, books and free printables. Follow along wherever you watch and listen.</p><div class="socials">{socials}</div></section>
+<section class="section" id="club" style="background:var(--sky-l)"><div class="wrap center"><div class="ml-embedded" data-form="Xzbuou"></div></div></section>
 <footer>© {datetime.date.today().year} BoomBooms Tunes · Home of BoomBoom and Fuzz · <a href="/contact-us">Contact</a></footer>
 </body></html>"""
 
