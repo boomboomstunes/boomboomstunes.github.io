@@ -125,7 +125,7 @@ ul.bul{padding-left:0;list-style:none}ul.bul li{margin:8px 0}
 def page(title, desc, path, body, og_img="img/hero.png"):
     nav = "".join(f'<a href="{h}"{" class=on" if (h == path or (h != "/" and path.startswith(h))) else ""}>{n}</a>' for n, h in NAV)
     socials = "".join(f'<a href="{u}" target="_blank" rel="noopener">{n}</a>' for n, u in SOCIAL)
-    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    return f"""<!doctype html><html lang="en"><head><script async src="https://www.googletagmanager.com/gtm.js?id=GTM-NDPJTXHK"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){{dataLayer.push(arguments);}}gtag('js', new Date());</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="{SITE}{path}"><meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:image" content="{SITE}/{og_img}"><meta property="og:type" content="website"><link rel="icon" href="/img/favicon.png">
